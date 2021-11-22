@@ -1,0 +1,16 @@
+ /* BLINK no Menu EVACUAÇÃO  */
+
+ @keyframes piscar{
+    0%{
+        background: springgreen;
+    }
+    100%{
+        background: yellow;
+    }
+}
+.piscar{
+    animation-name: piscar;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    border-radius: 5pt;
+}
