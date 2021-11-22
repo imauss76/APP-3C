@@ -4,7 +4,7 @@
     
 
     <div>
-    <h3>Incluir Novos Técnicogit:</h3>
+    <h3>Incluir Novo Técnico:</h3>
     </div>
 
     <table>
