@@ -22,7 +22,7 @@
               
                 <tr>
                     <td>{{ $falha->origem }}</td>
-                    <td>{{ $falha->elemento }}</td>
+                    <td>{{ $falha->elementoFal->nome }}</td>
                     <td>{{ $falha->descricao }}</td>
                 </tr>
             @endforeach

@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Falha extends Model
+class falha extends Model
 {
     protected $fillable = [
         'id',
@@ -15,6 +15,6 @@ class Falha extends Model
     
     public function elementoFal()
     {
-    return $this->belongsTo('App\Elemento','elemento','id');
+    return $this->belongsTo('App\elemento','elemento','id');
     }
 }
