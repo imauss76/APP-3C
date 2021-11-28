@@ -1,4 +1,4 @@
-<form action={{route('Tecnico.store')}} method="post" autocomplete="off">
+<form action={{route('tecnico.store')}} method="post" autocomplete="off">
     {{ csrf_field() }}
     <input type="hidden" id="redirect_to" name="redirect_to" value={{URL::previous()}}>
     

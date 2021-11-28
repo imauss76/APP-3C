@@ -24,29 +24,30 @@
 
           <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Cadastros <span class="caret"></span></a>
             <ul class="dropdown-menu">
-
+           
+                <li><a href="/Tecnico">Técnicos</a></li> <!--Acesso de Cadastro Somente p/ Usuario Admin-->           
                 <li><a href="/Setor">Setores</a></li>
                 <li><a href="/Motor">Motores</a></li>
-                <li><a href="/Tecnico">Técnicos</a></li> <!--Acesso de Cadastro Somente p/ Usuario Admin-->           
-                <li><a href="/solicitarAcessoExterno">Itens do Motor</a></li>          
-                <li><a href="fazendo">Tipo da Falha</a></li>
-                <li><a href="fazendo">Causa da Falha</a></li>
+                <li><a href="/elemento">Elementos do Motor</a></li>          
+                <li><a href="/falha">Tipo de Falha</a></li>
 
             </ul>
           </li>
         <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Listas <span class="caret"></span></a>
           <ul class="dropdown-menu">
-          <li><a href="visupdfstr">Lista de Setores</a></li> <!-- lista de Usuários Externos cadastrados no sistema  -->
-            <li ><a href="visupdfmtr">Lista de Motores</a></li> <!-- lista de Usuários Externos cadastrados no sistema  -->
-            <li><a href="fazendo">Lista de ...1</a></li><!-- lista de Usuários Internos cadastrados no sistema  -->
-            <li><a href="fazendo">Lista de ...2</a></li> <!-- lista de Usuários Externos cadastrados no sistema  -->
+          <li><a href="visupdfstr">Lista de Setores</a></li> <!-- lista de Setores cadastrados no sistema  -->
+            <li ><a href="visupdfmtr">Lista de Motores</a></li> <!-- lista de Motores cadastrados no sistema  -->
+            <li><a href="visupdfele">Lista de Elementos</a></li> <!-- lista de Elementos cadastrados no sistema  -->
+
+            <li><a href="visupdftec">Lista de Técnicos</a></li><!-- lista de Tecnicos cadastrados no sistema  -->
+            <li><a href="visupdffal">Lista de Falhas</a></li> <!-- lista de Falhas cadastrados no sistema  -->
           </ul>
         </li>
 
         <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Registro de Corretivas<span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="visupdfev" style=" color: black;">Corretivas Registradas</a></li> <!-- lista de Usuários presentes no local em uma determinada data ou intervalo de  data  -->
-            <li><a href="evacuacao" style=" color: black;">Registrar Corretivas</a></li> <!-- Formulário para registro da Evacução  -->
+            <li><a href="visupdfcor" style=" color: black;">Corretivas Registradas</a></li> <!-- lista de Usuários presentes no local em uma determinada data ou intervalo de  data  -->
+            <li><a href="corretiva" style=" color: black;">Registrar Corretivas</a></li> <!-- Formulário para registro da Evacução  -->
           </ul>	
         </li>
 

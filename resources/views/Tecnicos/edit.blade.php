@@ -51,8 +51,16 @@
                 <option value="Supervisor">Supervisor</option>
             </select></td>        
         </tr>
-
         
+        </table>
+        <br>
+            <div class="form-group">
+                <input style=" width:70px; background: #069cc2; border-radius: 6px; padding: 4px;
+            cursor: pointer; color: black; border: none; font-size: 14px;" type="submit" name="save_tec" value="Atualizar">
+                <input style=" width:70px; background: red; border-radius: 6px; padding: 4px;
+            cursor: pointer;color: black; border: none; font-size: 14px;" type="submit" name="cancel" value="Cancelar">
+            </div>
+        </div>
     </form>
 </div>
 @endsection

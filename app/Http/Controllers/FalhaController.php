@@ -1,10 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\tecnico;
+use App\falha;
 use Illuminate\Http\Request;
 
-class TecnicoController extends Controller
+class FalhaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,15 +14,15 @@ class TecnicoController extends Controller
 
     public function visupdf()
     {
-        $tecnicospdf = tecnico::paginate(5);
-        return view('tecnicos.pdftec', compact('tecnicospdf') );
+        $falhaspdf = falha::paginate(5);
+        return view('falhas.pdffal', compact('falhaspdf') );
     }
 
 
     public function index()
     {
-        $tecnicos = tecnico::paginate(5);
-        return view('tecnicos.index', compact('tecnicos') );
+        $falhas = falha::paginate(5);
+        return view('falhas.index', compact('falhas') );
     }
 
     /**
@@ -32,7 +32,7 @@ class TecnicoController extends Controller
      */
     public function create()
     {
-        return view('tecnicos.create', ['action'=>route('tecnico.store'), 'method'=>'post']);
+        return view('falhas.create', ['action'=>route('falha.store'), 'method'=>'post']);
     }
 
     /**
@@ -43,11 +43,11 @@ class TecnicoController extends Controller
      */
     public function store(Request $request)
     {
-        $url = $request->get('redirect_to', route('tecnico.index'));
+        $url = $request->get('redirect_to', route('falha.index'));
         if (! $request->has('cancel') ){
             $dados = $request->all();
-            Tecnico::create($dados);
-            $request->session()->flash('message', 'Técnico cadastro com sucesso');
+            Falha::create($dados);
+            $request->session()->flash('message', 'Falha cadastrada com sucesso');
         }
         else{ 
             $request->session()->flash('message', 'Operação cancelada pelo usuário'); 
@@ -58,10 +58,10 @@ class TecnicoController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Tecnico  $tecnico
+     * @param  \App\Falha  $falha
      * @return \Illuminate\Http\Response
      */
-    public function show(Tecnico $tecnico)
+    public function show(Falha $falha)
     {
         //
     }
@@ -69,10 +69,10 @@ class TecnicoController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Tecnico  $tecnico
+     * @param  \App\Falha  $falha
      * @return \Illuminate\Http\Response
      */
-    public function edit(Tecnico $tecnico)
+    public function edit(Falha $falha)
     {
         //
     }
@@ -81,42 +81,42 @@ class TecnicoController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Tecnico  $tecnico
+     * @param  \App\Falha  $falha
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, tecnico $tecnico)
+    public function update(Request $request, falha $falha)
     {
         if (! $request->has('cancel') )
         {
-            $tecnico->matricula = $request->input('matricula');
-            $tecnico->nome = $request->input('nome');
-            $tecnico->funcao = $request->input('funcao');
-            $tecnico->update();
-            \Session::flash('message', 'Técnico atualizado com sucesso!');
+            $falha->origem = $request->input('origem');
+            $falha->elemento = $request->input('elemento');
+            $falha->descricao = $request->input('descricao');
+            $falha->update();
+            \Session::flash('message', 'Falha atualizada com sucesso!');
         }
         else
         { 
             $request->session()->flash('message', 'Operação cancelada pelo usuário'); 
         }
-        return redirect()->route('tecnico.index'); 
+        return redirect()->route('falha.index'); 
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Tecnico  $tecnico
+     * @param  \App\Falha  $falha
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Tecnico $tecnico, Request $request)
+    public function destroy(Falha $falha, Request $request)
     {
         if (! $request->has('cancel') ){
-            $tecnico->delete();
-            \Session::flash('message', 'Solicitação excluída com sucesso!');
+            $falha->delete();
+            \Session::flash('message', 'Falha excluída com sucesso!');
         }
         else
         { 
             $request->session()->flash('message', 'Operação cancelada pelo usuário'); 
         }
-        return redirect()->route('tecnico.index'); 
+        return redirect()->route('falha.index'); 
     }
 }

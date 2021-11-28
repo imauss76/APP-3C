@@ -12,12 +12,6 @@
 */
 
 
-Route::get('teste', function () {
-    $dados = DB::table('setors')->get();
-    dd($dados);
-});
-
-
 Route::get('/', function () {
     return view('welcome');
 });
@@ -32,7 +26,6 @@ Route::get('sobre', function () {
 
 Auth::routes();
 
-
 Route::middleware('auth')->group(function(){
 
     Route::resource('/inicio', 'InicioController');
@@ -43,22 +36,41 @@ Route::middleware('auth')->group(function(){
 
     Route::resource('/Tecnico', 'TecnicoController');
 
+    Route::resource('/falha', 'FalhaController');
+
+    Route::resource('/elemento', 'ElementoController');
+
+    Route::resource('/corretiva', 'CorretivaController');
+
     /** Rotas para GERAÇÃO DE ARQUIVOS PDF */
 
+    Route::get('pdfmtr', 'PdfmtrController@geraPdfmtr'); // GERAR PDF DE REGISTROS DE MOTORES
 
-
-
-
-    Route::get('pdfmtr', 'PdfmtrController@geraPdfmtr'); // GERAR PDF DE REGISTROS DE PONTOS MONITORADOS
-
-    Route::get('visupdfmtr', 'MotorController@visupdf'); // VISUALIZA OS PONTOS MONITORADOS
+    Route::get('visupdfmtr', 'MotorController@visupdf'); // VISUALIZA OS MOTORES
 
     Route::get('pdfstr', 'PdfstrController@geraPdfstr'); // GERAR PDF DE SETORES
 
     Route::get('visupdfstr', 'SetorController@visupdf'); // VISUALIZA OS SETORES
 
-    Route::get('pdfev', 'PdfevController@geraPdfev'); // GERAR PDF DE REGISTROS DE EVACUAÇÕES
+    Route::get('pdftec', 'PdftecController@geraPdftec'); // GERAR PDF DE TECNICOS
 
+    Route::get('visupdftec', 'TecnicoController@visupdf'); // VISUALIZA OS TECNICOS
+
+    Route::get('pdffal', 'PdffalController@geraPdffal'); // GERAR PDF DE FALHAS
+
+    Route::get('visupdffal', 'FalhaController@visupdf'); // VISUALIZA AS FALHAS
+
+    Route::get('pdfele', 'PdfeleController@geraPdfele'); // GERAR PDF DE ELEMENTOS
+
+    Route::get('visupdfele', 'ElementoController@visupdf'); // VISUALIZA OS ELEMENTOS
+
+    Route::get('pdfcor', 'PdfcorController@geraPdfcor'); // GERAR PDF DE CORRETIVAS
+
+    Route::get('visupdfcor', 'CorretivaController@visupdf'); // VISUALIZA OS CORRETIVAS
+
+
+
+    //Route::get('pdfev', 'PdfevController@geraPdfev'); // GERAR PDF DE REGISTROS DE EVACUAÇÕES
 });
 
 // CONTROLE DE ACESSOS
@@ -69,9 +81,13 @@ Route::middleware('admin')->group(function(){
 
     Route::resource('/Motor', 'MotorController');
 
-    Route::resource('/Tecnico', 'TecnicoController');
+    Route::resource('/tecnico', 'TecnicoController');
 
-    Route::get('visupdfstr', 'SetorController@visupdf'); // VISUALIZA OS SETORES
+    Route::resource('/falha', 'FalhaController');
+
+    Route::resource('/elemento', 'ElementoController');
+
+    Route::resource('/corretiva', 'CorretivaController');
 
 });
 
@@ -79,8 +95,6 @@ Route::middleware('admin')->group(function(){
 Route::get('/home', 'HomeController@index')->name('home');
 
 /** Rotas para INICIO */
-
-
 
 /** Rotas para SETORES */
 
@@ -104,7 +118,6 @@ Route::get('/Motor/edit/{Motor}', function (App\Motor $Motor) {
     return view('Motores.edit', ['mtr' => $Motor]);
 })->name('Motor.edit');
 
-
 /** Rotas para TECNICOS */
 
 Route::get('/tecnico/delete/{tecnico}', function (App\tecnico $tecnico) {
@@ -112,20 +125,35 @@ Route::get('/tecnico/delete/{tecnico}', function (App\tecnico $tecnico) {
 })->name('tecnico.delete');
 
 Route::get('/tecnico/edit/{tecnico}', function (App\tecnico $tecnico) {
-    return view('acessosInternos.edit', ['sai' => $tecnico]);
+    return view('tecnicos.edit', ['tec' => $tecnico]);
 })->name('tecnico.edit');
 
+/** Rotas para FALHAS */
 
-/** Rotas para GERAÇÃO DE ARQUIVOS TXT */
+Route::get('/falha/delete/{falha}', function (App\falha $falha) {
+    return view('falhas.destroy', ['fal' => $falha]);
+})->name('falha.delete');
 
-Route::get('histUI', function () {
-    return view('histUI');
-});
+Route::get('/falha/edit/{falha}', function (App\falha $falha) {
+    return view('falhas.edit', ['fal' => $falha]);
+})->name('falha.edit');
 
-Route::get('histUV', function () {
-    return view('histUV');
-});
+/** Rotas para ELEMENTOS */
 
-Route::get('histPUI', function () {
-    return view('histPUI');
-});
+Route::get('/elemento/delete/{elemento}', function (App\elemento $elemento) {
+    return view('elementos.destroy', ['ele' => $elemento]);
+})->name('elemento.delete');
+
+Route::get('/elemento/edit/{elemento}', function (App\elemento $elemento) {
+    return view('elementos.edit', ['ele' => $elemento]);
+})->name('elemento.edit');
+
+/** Rotas para CORRETIVAS */
+
+Route::get('/corretiva/delete/{corretiva}', function (App\corretiva $corretiva) {
+    return view('corretivas.destroy', ['cor' => $corretiva]);
+})->name('corretiva.delete');
+
+Route::get('/corretiva/edit/{corretiva}', function (App\corretiva $corretiva) {
+    return view('corretivas.edit', ['cor' => $corretiva]);
+})->name('corretiva.edit');
