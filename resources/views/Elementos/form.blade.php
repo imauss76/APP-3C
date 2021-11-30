@@ -18,7 +18,7 @@
             <tr>
                 <td><label for="valor"><strong>Valor R$:</strong></label>
                 <td><input style="width: 250px; background: #DCDCDC; border-radius: 6px; padding: 4px; cursor: pointer;
-                    color: black; border: none; font-size: 14px;" type="text" id="valor" name="valor" placeholder="Digite o valor.">                    
+                    color: black; border: none; font-size: 14px;" type="number" id="valor" name="valor" placeholder="Digite o valor.">                    
             </tr>
 
 

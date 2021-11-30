@@ -6,7 +6,7 @@
             <h3>Elementos:</h3>
         </div>
         <div class="col-md-8">
-        <a href="{{route('Elemento.create')}}" class="btn btn-primary">Cadastrar Elemento</a>
+        <a href="{{route('elemento.create')}}" class="btn btn-primary">Cadastrar Elemento</a>
         </div>
         <div>{{ $elementos->links() }}</div>
   

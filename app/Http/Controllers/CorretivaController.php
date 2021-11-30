@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
 use App\Corretiva;
 use Illuminate\Http\Request;
 
@@ -17,6 +18,13 @@ class CorretivaController extends Controller
     {
         $corretivaspdf = Corretiva::paginate(5);
         return view('corretivas.pdfCOR', compact('corretivaspdf') );
+    }
+
+    public function maiorCustopdf()
+    {
+        $custopdf = DB::table('corretivas')->select('data_corretiva', 'relator', 'setor', 'custo')->where('id', '>=', 6)->get();
+        // dd($custopdf);
+        return view('corretivas.pdfCUS', compact('custopdf') );
     }
 
     public function index()
@@ -100,6 +108,7 @@ class CorretivaController extends Controller
             $corretiva->motor = $request->input('motor');
             $corretiva->elemento = $request->input('elemento');
             $corretiva->falha = $request->input('falha');
+            $corretiva->custo = $request->input('custo');
             $corretiva->descricao_causa = $request->input('descricao_causa');
             $corretiva->descricao_corretiva = $request->input('descricao_corretiva');
             $corretiva->acao_bloqueio = $request->input('acao_bloqueio');

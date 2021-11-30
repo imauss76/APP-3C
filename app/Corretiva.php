@@ -16,6 +16,7 @@ class Corretiva extends Model
         'motor',
         'elemento',
         'falha',
+        'custo',
         'descricao_causa',
         'descricao_corretiva',
         'acao_bloqueio'

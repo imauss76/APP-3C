@@ -14,25 +14,25 @@
 
     <div class="form-row">
 
-    <div class="form-group col-md-4">
+    <div class="form-group col-md-2">
         <label for="data_corretiva"><strong>* Data da Corretiva:</strong></label>
         <input class="form-control" style=" background: #DCDCDC; border-radius: 6px; padding: 4px; cursor: pointer;
             color: black; border: none; font-size: 14px;" type="date" id="data_corretiva" name="data_corretiva" value="dd/mm/yyyy" onkeypress="return false">  
     </div>
 
-    <div class="form-group col-md-4">
+    <div class="form-group col-md-2">
         <label for="hora_inicio"><strong>* Hora Inicial:</strong></label>
         <input class="form-control" style=" background: #DCDCDC; border-radius: 6px; padding: 4px; cursor: pointer;
             color: black; border: none; font-size: 14px;" type="time" id="hora_inicio" name="hora_inicio" onkeypress="return false">  
     </div>
 
-    <div class="form-group col-md-4">
+    <div class="form-group col-md-2">
         <label for="hora_final"><strong>* Hora Final:</strong></label>
         <input class="form-control" style=" background: #DCDCDC; border-radius: 6px; padding: 4px; cursor: pointer;
             color: black; border: none; font-size: 14px;" type="time" id="hora_final" name="hora_final" value="hh:mm:ss" onkeypress="return false">  
     </div>
 
-    <div class="form-group col-md-6">
+    <div class="form-group col-md-3">
         <label for="relator"><strong>* Relator:</strong></label>
         <select class="form-control" name="relator" id="relator" style=" background: #DCDCDC; border-radius: 6px; padding: 4px; cursor: pointer;
             color: black; border: none; font-size: 14px;">
@@ -47,7 +47,7 @@
         </select>
     </div>
 
-    <div class="form-group col-md-6">
+    <div class="form-group col-md-3">
         <label for="setor"><strong>* Setor:</strong></label>
         <select class="form-control" name="setor" id="setor" style=" background: #DCDCDC; border-radius: 6px; padding: 4px; cursor: pointer;
             color: black; border: none; font-size: 14px;">
@@ -62,7 +62,7 @@
         </select>
     </div>
 
-    <div class="form-group col-md-4">
+    <div class="form-group col-md-3">
         <label for="motor"><strong>* Motor:</strong></label>
         <select class="form-control" name="motor" id="motor" style=" background: #DCDCDC; border-radius: 6px; padding: 4px; cursor: pointer;
             color: black; border: none; font-size: 14px;">
@@ -77,7 +77,7 @@
         </select>
     </div>
 
-    <div class="form-group col-md-4">
+    <div class="form-group col-md-3">
         <label for="elemento"><strong>* Elemento:</strong></label>
         <select class="form-control" name="elemento" id="elemento" style=" background: #DCDCDC; border-radius: 6px; padding: 4px; cursor: pointer;
             color: black; border: none; font-size: 14px;">
@@ -92,7 +92,7 @@
         </select>
     </div>
     
-    <div class="form-group col-md-4">
+    <div class="form-group col-md-3">
         <label for="falha"><strong>* Falha:</strong></label>
         <select class="form-control" name="falha" id="falha" style=" background: #DCDCDC; border-radius: 6px; padding: 4px; cursor: pointer;
             color: black; border: none; font-size: 14px;">
@@ -105,6 +105,12 @@
                     echo "<option value=".$row['id'].">".$row['descricao']."</option>";
                 }?>
         </select>
+    </div>
+
+    <div class="form-group col-md-3">
+        <label for="custo"><strong>* Custo da Corretiva:</strong></label><br>
+        <input class="form-control" Style=" background: #DCDCDC; border-radius: 6px; padding: 4px; cursor: pointer;
+            color: black; border: none; font-size: 14px;" type="number" name="custo" id="custo"></input>
     </div>
 
     <div class="form-group col-md-4">

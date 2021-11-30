@@ -107,6 +107,13 @@
         </select>
     </div>
 
+    <div class="form-group col-md-3">
+        <label for="custo"><strong>* Custo Hora Parada:</strong></label><br>
+        <input class="form-control" Style=" background: #DCDCDC; border-radius: 6px; padding: 4px; cursor: pointer;
+            color: black; border: none; font-size: 14px;" type="number" name="custo" id="custo" value="{{$cor->custo}}" disabled></input>
+    </div>
+
+
     <div class="form-group col-md-4">
         <label for="descricao_causa"><strong>* Descrição da Causa:</strong></label><br>
         <input class="form-control" Style=" height:50px; background: #DCDCDC; border-radius: 6px; padding: 4px; cursor: pointer;

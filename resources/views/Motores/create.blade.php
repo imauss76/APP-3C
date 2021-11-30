@@ -3,7 +3,6 @@
 @section('content')
 <div class="container-fluid">
     <div class="row-fluid">
-        <!--<h3>Novo Motor</h3>-->
         @include('Motores.form')
         <br>
         <div class="form-group">

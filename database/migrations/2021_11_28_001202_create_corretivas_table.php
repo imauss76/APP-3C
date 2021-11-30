@@ -36,6 +36,7 @@ class CreateCorretivasTable extends Migration
             $table->String('motor');
             $table->String('elemento');
             $table->String('falha');
+            $table->Float('custo');
 
             $table->text('descricao_causa');
             $table->text('descricao_corretiva');

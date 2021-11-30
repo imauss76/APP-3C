@@ -68,9 +68,7 @@ Route::middleware('auth')->group(function(){
 
     Route::get('visupdfcor', 'CorretivaController@visupdf'); // VISUALIZA OS CORRETIVAS
 
-
-
-    //Route::get('pdfev', 'PdfevController@geraPdfev'); // GERAR PDF DE REGISTROS DE EVACUAÇÕES
+    Route::get('visupdfcus', 'CorretivaController@maiorCustopdf'); // VISUALIZA OS CORRETIVAS MAIOR VALOR
 });
 
 // CONTROLE DE ACESSOS
@@ -94,7 +92,6 @@ Route::middleware('admin')->group(function(){
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-/** Rotas para INICIO */
 
 /** Rotas para SETORES */
 

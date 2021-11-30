@@ -48,6 +48,8 @@
           <ul class="dropdown-menu">
             <li><a href="visupdfcor" style=" color: black;">Corretivas Registradas</a></li> <!-- lista de Usuários presentes no local em uma determinada data ou intervalo de  data  -->
             <li><a href="corretiva" style=" color: black;">Registrar Corretivas</a></li> <!-- Formulário para registro da Evacução  -->
+            <li><a href="visupdfcus" style=" color: black;">Corretivas Maior Custo</a></li> <!-- lista de Usuários presentes no local em uma determinada data ou intervalo de  data  -->
+
           </ul>	
         </li>
 
